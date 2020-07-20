@@ -11,3 +11,9 @@ jobs:
     docker:
       - image: circleci/node:12.9.1-browsers
       - run: yarn test
+
+workflows:
+  build_and_test:
+    jobs:
+      - build
+      - test
