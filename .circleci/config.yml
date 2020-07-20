@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/node:12.9.1-browsers
-steps:
+    steps:
       - checkout
       
       - restore_cache:
