@@ -73,10 +73,8 @@ jobs:
       - image: circleci/node:10
     steps:
       - checkout
-      - node/with-cache:
-          steps:
-            - run: yarn install
-            - run: yarn test
+      - run: yarn install
+      - run: yarn test
   deploy:
     docker:
       - image: circleci/node:10
