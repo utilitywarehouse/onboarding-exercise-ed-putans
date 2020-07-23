@@ -32,7 +32,9 @@ jobs:
 workflows:
     build:
       jobs:
-        - build
+        - build:
+          context: onboarding
     deploy:
       jobs:
-        - deploy
+        - deploy:
+          context: onboarding
