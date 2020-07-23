@@ -70,17 +70,6 @@ jobs:
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
-
-      - run: yarn lint
-
-      - run:
-          command: yarn test:ci
-          environment:
-            JEST_JUNIT_OUTPUT: "reports/junit/js-test-results.xml"
-      - store_test_results:
-          path: ./reports/junit
-      - store_artifacts:
-          path: ./reports/junit
   deploy:
     docker:
       - image: circleci/node:10
