@@ -1,44 +1,4 @@
-# version: 2.1
-# orbs:
-#   node: circleci/node@1.1.6
-# jobs:
-#   test:
-#     executor:
-#       name: node/default
-#     steps:
-#       - checkout
-#       - node/with-cache:
-#           steps:
-#             - run: yarn install
-#             - run: yarn test
-#   deploy:
-#     docker:
-#       - image: circleci/node:12
-#     steps:
-#       - checkout
-#       - setup_remote_docker:
-#         docker_laygier_caching: true
-#       - run:
-#           name: login docker
-#           command: docker login -u onboarding -p $UW_DOCKER_PASS registry.uw.systems
-#       - run: 
-#           name: docker build
-#           command: |
-#             docker build -t registry.uw.systems/onboarding/onboarding-exercise-ed-putans:$CIRCLE_SHA1 -t registry.uw.systems/onboarding/onboarding-exercise-ed-putans:latest .
-#       - run: 
-#           name: docker push 
-#           command: docker push registry.uw.systems/onboarding/onboarding-exercise-ed-putans
-# # yeeted from another dude
-# workflows:
-#   build:
-#     jobs:
-#       - build
-#   deploy:
-#     jobs:
-#       - deploy:
-#           context: onboarding
-
-
+# shoutout to this legend https://github.com/utilitywarehouse/onboarding-gquinelato/blob/master/.circleci/config.yml
 workflows:
   version: 2
   test:
