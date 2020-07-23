@@ -48,9 +48,6 @@ workflows:
     jobs:
       - deploy:
           context: onboarding
-          filters:
-            branches:
-              only: master
 
 version: 2
 jobs:
@@ -70,6 +67,7 @@ jobs:
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
+
   deploy:
     docker:
       - image: circleci/node:10
