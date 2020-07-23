@@ -31,7 +31,3 @@ workflows:
       jobs:
         - deploy:
           context: onboarding
-# literally yeeted
-          filters:
-            branches:
-              only: master
